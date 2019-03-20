@@ -93,8 +93,7 @@ class TestTransactionList(RestApiBaseTest):
            
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address)) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -128,8 +127,7 @@ class TestTransactionList(RestApiBaseTest):
                     
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -182,8 +180,7 @@ class TestTransactionList(RestApiBaseTest):
                     
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -234,8 +231,7 @@ class TestTransactionList(RestApiBaseTest):
                     
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -292,8 +288,7 @@ class TestTransactionList(RestApiBaseTest):
                       
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -379,8 +374,7 @@ class TestTransactionList(RestApiBaseTest):
                          
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -395,7 +389,7 @@ class TestTransactionList(RestApiBaseTest):
         address = setup['address']
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address)) as data:
                     response = await data.json()
                     
             for link in response:
@@ -414,7 +408,7 @@ class TestTransactionList(RestApiBaseTest):
         address = setup['address']
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address)) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -430,7 +424,7 @@ class TestTransactionList(RestApiBaseTest):
         address = setup['address'] 
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address)) as data:
                     response = await data.json()
             
             for trans in response['data']:
@@ -447,7 +441,7 @@ class TestTransactionList(RestApiBaseTest):
         count =0
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions'.format(address), raise_for_status=True) as data:
+                async with session.get(url='{}/transactions'.format(address)) as data:
                     response = await data.json()
                     
             for trans in enumerate(response['data']):
@@ -472,8 +466,7 @@ class TestTransactionGet(RestApiBaseTest):
                          
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/transactions/{}'.format(address,expected_id), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/transactions/{}'.format(address,expected_id)) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")

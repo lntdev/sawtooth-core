@@ -56,7 +56,7 @@ class TestPeerList(RestApiBaseTest):
         
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/peers'.format(address), raise_for_status=True) as data:
+                async with session.get(url='{}/peers'.format(address)) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")

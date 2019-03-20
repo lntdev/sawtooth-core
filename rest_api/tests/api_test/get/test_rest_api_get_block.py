@@ -100,8 +100,7 @@ class TestBlockList(RestApiBaseTest):
                
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -122,8 +121,7 @@ class TestBlockList(RestApiBaseTest):
                   
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -168,8 +166,7 @@ class TestBlockList(RestApiBaseTest):
                     
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -235,8 +232,7 @@ class TestBlockList(RestApiBaseTest):
         
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -301,8 +297,7 @@ class TestBlockList(RestApiBaseTest):
                            
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -318,8 +313,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
 
             for link in response:
@@ -338,8 +332,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info(error)
@@ -355,8 +348,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']  
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
                     
             for batch in response['data']:
@@ -372,8 +364,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']
         try: 
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
                     
             for block_list in get_blocks():
@@ -392,8 +383,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']
         try: 
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
                     
             block_list = response['data']
@@ -411,8 +401,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']
         try: 
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
                     
             block_list = response['data']
@@ -430,8 +419,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']
         try: 
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
                     
             block_list = response['data']
@@ -448,8 +436,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']
         try: 
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
             
             block_list = response['data']  
@@ -467,8 +454,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']
         try: 
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
         
             block_list = response['data']   
@@ -484,8 +470,7 @@ class TestBlockList(RestApiBaseTest):
         count =0
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
                     
             for block in enumerate(response['data']):
@@ -500,8 +485,7 @@ class TestBlockList(RestApiBaseTest):
         address = setup['address']
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks'.format(address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks'.format(address)) as data:
                     response = await data.json()
                     
             for batch in response['data']:
@@ -530,8 +514,7 @@ class TestBlockGet(RestApiBaseTest):
                          
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/blocks/{}'.format(address,expected_id), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/blocks/{}'.format(address,expected_id)) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable") 

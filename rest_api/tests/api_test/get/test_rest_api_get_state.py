@@ -95,7 +95,7 @@ class TestStateList(RestApiBaseTest):
                                                                       expected_address)
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address), raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
         except urllib.error.HTTPError as error:
             LOGGER.info("Rest Api unable to get state list")
@@ -226,8 +226,7 @@ class TestStateList(RestApiBaseTest):
                     
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -245,8 +244,7 @@ class TestStateList(RestApiBaseTest):
                     
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -323,8 +321,7 @@ class TestStateList(RestApiBaseTest):
                          
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address), params=params, 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address), params=params) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -340,8 +337,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address']
         try:   
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
             
             for state in response['data']:
@@ -357,8 +353,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address']   
         try:   
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                     
             for _ in response['data']:
@@ -378,8 +373,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address'] 
         try:   
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                     
             for _ in response['data']:
@@ -394,8 +388,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address']  
         try:   
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                     
             for _ in response['data']:
@@ -412,8 +405,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address']  
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                       
             for state in response['data']:
@@ -431,8 +423,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address']
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                     
             for state in response['data']:
@@ -449,8 +440,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address']  
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                        
             for state in response['data']:
@@ -468,8 +458,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address'] 
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                        
             for state in response['data']:
@@ -488,8 +477,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address'] 
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                        
             for state in response['data']:
@@ -510,8 +498,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address']
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                     
             for link in response:
@@ -530,8 +517,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address']
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info(error)
@@ -547,8 +533,7 @@ class TestStateList(RestApiBaseTest):
         address = setup['address'] 
         try:   
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                     
             for _ in response['data']:
@@ -565,8 +550,7 @@ class TestStateList(RestApiBaseTest):
         count = 0
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
                     
             state_list = response['data']
@@ -584,8 +568,7 @@ class TestStateGet(RestApiBaseTest):
         state_address = setup['state_address'][0]
         try:
             async with aiohttp.ClientSession() as session:        
-                async with session.get(url='{}/state/{}'.format(address,state_address), 
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state/{}'.format(address,state_address)) as data:
                     response = await data.json()
         except aiohttp.client_exceptions.ClientResponseError as error:
             LOGGER.info("Rest Api is Unreachable")
@@ -612,8 +595,7 @@ class TestStateDeleteRoot(RestApiBaseTest):
         count = 0
         try:
             async with aiohttp.ClientSession() as session:
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
 
             state_list = response['data']
@@ -635,8 +617,7 @@ class TestStateDeleteRoot(RestApiBaseTest):
         count = 0
         try:
             async with aiohttp.ClientSession() as session:
-                async with session.get(url='{}/state'.format(address),
-                                       raise_for_status=True) as data:
+                async with session.get(url='{}/state'.format(address)) as data:
                     response = await data.json()
 
             state_list = response['data']
